@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Ovean_Android_Intro_Abril_2026</string>
     <string name="boas_vindas">Seja Bem Vindo ao Samsung Ocean %1$s</string>
+    <string name="o_nome_n_o_pode_estar_vazio">O nome não pode estar vazio</string>
+    <string name="key_resultado">NOME_DIGITADO</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="o_nome_aparecera_aqui">O nome aparecera aqui</string>
+    <string name="voltar">Voltar</string>
+    <string name="digite_o_seu_nome">Digite o seu nome</string>
+    <string name="enviar">Enviar</string>
+    <string name="abrir_nova_tela">Abrir Nova Tela</string>
+    <string name="limpar">Limpar</string>
 </resources>

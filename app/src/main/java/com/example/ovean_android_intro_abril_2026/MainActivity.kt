@@ -1,5 +1,6 @@
 package com.example.ovean_android_intro_abril_2026
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -23,17 +24,37 @@ class MainActivity : AppCompatActivity() {
         val btEnviar = findViewById<Button>(R.id.btEnviar)
         val tvResultado = findViewById<TextView>(R.id.tvResultado)
         val etNome = findViewById<EditText>(R.id.etNome)
+        val btAbrirNovaTela = findViewById<Button>(R.id.btAbrirNovaTela)
+        val btLimpar = findViewById<Button>(R.id.btLimpar)
 
         btEnviar.setOnClickListener {
             val nome = etNome.text.toString()
 
             if (nome.isBlank()) {
-                etNome.error = "O nome não pode estar vazio"
+                etNome.error = getString(R.string.o_nome_n_o_pode_estar_vazio)
                 etNome.requestFocus()
             } else {
                 etNome.error = null
                 tvResultado.text = getString(R.string.boas_vindas, nome)
             }
+////            val novaTelaIntent = Intent(this, ResultadoActivity::class.java)
+////            startActivity(novaTelaIntent)
+
         }
+
+        btAbrirNovaTela.setOnClickListener {
+            val nome = etNome.text.toString()
+            val resultadoActivityIntent = Intent(this, ResultadoActivity::class.java)
+            resultadoActivityIntent.putExtra(getString(R.string.key_resultado), nome)
+            startActivity(resultadoActivityIntent)
+        }
+
+        btLimpar.setOnClickListener {
+            etNome.text.clear()
+            etNome.error = null
+            tvResultado.text = getString(R.string.hello_world)
+        }
+
+
     }
 }
